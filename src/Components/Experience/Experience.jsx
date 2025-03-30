@@ -8,7 +8,7 @@ const experiences = [
     role: "Hypertext Preprocessor (PHP)",
     duration: "2022",
     description:
-      "This is 15day intarnship in Collage 3 sem basic in Html, Css and PHP installation.",
+      "This is 15day intarnship in Collage 3 sem basic in Html, Css and PHP.",
   },
   {
     company: "Techmicra IT Solutions",
