@@ -64,11 +64,13 @@ const Navbar = () => {
               fontWeight: "bold",
               textAlign: isMobile ? "center" : "left",
               flexGrow: 1,
+              marginLeft: { xs: "6%", sm: "5%", md: "0" }, // Added left margin for mobile
               marginRight: { xs: "22%", md: "1%" },
             }}
           >
             My Portfolio
           </Typography>
+
 
           {!isMobile && (
             <Box sx={{ display: "flex", gap: 3 }}>
@@ -106,7 +108,7 @@ const Navbar = () => {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            justifyContent: "center", 
+            justifyContent: "center",
             paddingTop: "20px",
           },
         }}

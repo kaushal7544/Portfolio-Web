@@ -16,7 +16,7 @@ const experiences = [
     duration: "2023",
     description:
       "This is 45day intarnship in Collage 5 sem basic in Html, Css and React js to basic Projects.",
-  },
+  },    
   {
     company: "N R Crew",
     role: "MERN Stack-Present",
