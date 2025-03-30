@@ -14,17 +14,14 @@ const Banner = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
-  // Typing Effect for Name
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentText(texts[0].substring(0, endValue));
-
       if (isForward) {
         setEndValue((prev) => prev + 1);
       } else {
         setEndValue((prev) => prev - 1);
       }
-
       if (endValue > texts[0].length + 5) {
         setIsForward(false);
       }
@@ -36,7 +33,6 @@ const Banner = () => {
     return () => clearInterval(intervalId);
   }, [endValue, isForward]);
 
-  // Function to trigger CV download
   const handleDownload = () => {
     const link = document.createElement("a");
     link.href = CV;
@@ -63,7 +59,6 @@ const Banner = () => {
       }}
     >
       <Grid container spacing={3} alignItems="center" justifyContent="center">
-        {/* Left Side: Animated Text */}
         <Grid item xs={12} md={6} textAlign={isMobile ? "center" : "left"}>
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -72,37 +67,22 @@ const Banner = () => {
             viewport={{ once: true }}
           >
             <Box sx={{ paddingX: { xs: "5%", sm: "10%", md: "15%" }, mt: "17%" }}>
-              <Typography variant="h4" sx={{ fontWeight: "bold", mb: 2 }}>
+              <Typography variant="h4" sx={{ fontWeight: "bold", mb: 2, fontSize: { xs: "1.8rem", md: "2.5rem" } }}>
                 Hi, <span style={{ color: "lightblue" }}>{currentText}</span>
               </Typography>
-              <Typography
-                variant="h3"
-                component={motion.div}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-                sx={{ fontWeight: "bold", mb: 2 }}
-              >
+              <Typography variant="h3" sx={{ fontWeight: "bold", mb: 2, fontSize: { xs: "2rem", md: "3rem" } }}>
                 Welcome to My Portfolio
               </Typography>
-              <Typography
-                variant="h6"
-                component={motion.div}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
-                sx={{ mb: 3 }}
-              >
+              <Typography variant="h6" sx={{ mb: 3, fontSize: { xs: "1rem", md: "1.5rem" } }}>
                 Showcasing my work, projects, and skills in a stunning way.
               </Typography>
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
+              <motion.div whileHover={{ scale: 1.05 }} transition={{ type: "spring", stiffness: 300 }}>
                 <Button
                   variant="contained"
                   onClick={handleDownload}
                   sx={{
+                    fontSize: { xs: "0.8rem", md: "1rem" },
+                    padding: { xs: "0.5rem 1rem", md: "0.8rem 1.5rem" },
                     background: "rgb(19, 38, 90)",
                     color: "#fff",
                     "&:hover": { background: "rgb(7, 42, 141)", transform: "scale(1.02)" },
@@ -115,29 +95,22 @@ const Banner = () => {
             </Box>
           </motion.div>
         </Grid>
-
-        {/* Right Side: Image with Animation */}
         <Grid item xs={12} md={6} display="flex" justifyContent="center">
-           <motion.img
+          <motion.img
             src={img}
             alt="Banner Image"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            animate={{
-              // y: [0, -10, 0], // Floating effect 
-              // transition: { duration: 4, repeat: Infinity, ease: "easeInOut" },
-            }}
             style={{
-              width: isMobile ? "300px" : "600px", // Adjust image size for mobile
-              height: isMobile ? "300px" : "600px", // Adjust image size for mobile
-              borderRadius: "50%", // Optional: add circular effect to image
+              width: isMobile ? "250px" : "500px",
+              height: isMobile ? "250px" : "500px",
+              borderRadius: "50%",
               objectFit: "cover",
               marginTop: "10%",
               cursor: "pointer",
             }}
           />
-          
         </Grid>
       </Grid>
     </Box>
