@@ -43,48 +43,39 @@ const projects = [
     title: "Portfolio Website",
     description: "A sleek and modern personal portfolio built with React and MUI.",
     image: img1,
+    link: "https://portfolio-example.com"
   },
   {
     title: "E-Commerce Platform",
     description: "An online store with payment integration and admin dashboard.",
     image: img2,
+    link: "https://ecommerce-example.com"
   },
   {
     title: "Home Page",
     description: "A Simple Home Page using HTML and CSS.",
     image: img3,
-  },
+    link: "https://homepage-example.com"
+  }
 ];
 
 const Projects = () => {
   return (
     <Box
       id="projects"
-      sx={{
-        py: 6,
-        px: 3,
-        color: "#fff",
-        textAlign: "center",
-        maxWidth: "1859px",
-        margin: "auto",
-      }}
+      sx={{ py: 6, px: 3, color: "#fff", textAlign: "center", maxWidth: "1859px", margin: "auto" }}
     >
-      {/* Title Animation */}
       <motion.div
         initial={{ opacity: 0, y: -50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         viewport={{ once: false, amount: 0.3 }}
       >
-        <Typography variant="h4" sx={{ 
-          fontWeight: "bold", 
-          mb: { xs: "15%", sm: "7%", md: "5%" },
-          mt: "5%" }}>
+        <Typography variant="h4" sx={{ fontWeight: "bold", mb: { xs: "15%", sm: "7%", md: "5%" }, mt: "5%" }}>
           My Projects
         </Typography>
       </motion.div>
 
-      {/* Grid Animation */}
       <motion.div
         variants={containerVariants}
         initial="hidden"
@@ -92,65 +83,47 @@ const Projects = () => {
         viewport={{ once: false, amount: 0.3 }}
       >
         <Grid container spacing={3} justifyContent="center">
-          {projects.map((project, index) => {
-            return (
-              <Grid item xs={12} sm={6} md={4} key={index}>
-                <motion.div variants={itemVariants}>
-                  <Box sx={{ textAlign: "center", mb: 4 }}>
-                    {/* Floating & Rotating Image */}
-                    <motion.img
-                      src={project.image}
-                      alt={project.title}
-                      style={{
-                        width: "100%",
-                        maxWidth: "500px",
-                        borderRadius: "12px",
-                        border: "5px solid lightblue",
-                        boxShadow: "0px 4px 10px rgba(0,0,0,0.5)",
-                        marginBottom: "20px",
-                      }}
-                      animate={
-                        index === 0
-                          ? floatingAnimation
-                          : index === 1
-                          ? rotatingAnimation
-                          : leftRightAnimation // Left-Right animation for 3rd card
-                      }
-                      whileHover={{
-                        scale: 1.08,
-                        boxShadow: "0px 0px 20px rgba(173, 216, 230, 1)",
-                      }}
-                    />
+          {projects.map((project, index) => (
+            <Grid item xs={12} sm={6} md={4} key={index}>
+              <motion.div variants={itemVariants}>
+                <Box sx={{ textAlign: "center", mb: 4 }}>
+                  <motion.img
+                    src={project.image}
+                    alt={project.title}
+                    style={{
+                      width: "100%",
+                      maxWidth: "500px",
+                      borderRadius: "12px",
+                      border: "5px solid lightblue",
+                      boxShadow: "0px 4px 10px rgba(0,0,0,0.5)",
+                      marginBottom: "20px",
+                    }}
+                    animate={
+                      index === 0 ? floatingAnimation : index === 1 ? rotatingAnimation : leftRightAnimation
+                    }
+                    whileHover={{ scale: 1.08, boxShadow: "0px 0px 20px rgba(173, 216, 230, 1)" }}
+                  />
 
-                    {/* Project Details */}
-                    <Typography variant="h6" sx={{ fontWeight: "bold" }}>
-                      {project.title}
-                    </Typography>
-                    <Typography variant="body2" sx={{ mb: 2 }}>
-                      {project.description}
-                    </Typography>
+                  <Typography variant="h6" sx={{ fontWeight: "bold" }}>{project.title}</Typography>
+                  <Typography variant="body2" sx={{ mb: 2 }}>{project.description}</Typography>
 
-                    {/* Button with Hover Effect */}
-                    <motion.div whileHover={{ scale: 1.1 }}>
-                      <Button
-                        variant="contained"
-                        sx={{
-                          backgroundColor: "#1E3A8A",
-                          "&:hover": { backgroundColor: "#122F6B" },
-                        }}
-                      >
-                        View More
-                      </Button>
-                    </motion.div>
-                  </Box>
-                </motion.div>
-              </Grid>
-            );
-          })}
+                  <motion.div whileHover={{ scale: 1.1 }}>
+                    <Button
+                      variant="contained"
+                      sx={{ backgroundColor: "#1E3A8A", "&:hover": { backgroundColor: "#122F6B" } }}
+                      onClick={() => window.open(project.link, "_blank")}
+                    >
+                      View More
+                    </Button>
+                  </motion.div>
+                </Box>
+              </motion.div>
+            </Grid>
+          ))}
         </Grid>
       </motion.div>
     </Box>
-  );    
+  );
 };
 
 export default Projects;

@@ -66,11 +66,11 @@ const Banner = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            <Box sx={{ paddingX: { xs: "5%", sm: "10%", md: "15%" }, mt: "17%" }}>
-              <Typography variant="h4" sx={{ fontWeight: "bold", mb: 2, fontSize: { xs: "1.8rem", md: "2.5rem" } }}>
+            <Box sx={{ paddingX: { xs: "5%", sm: "10%", md: "15%" }, mt: "25%" }}>
+              <Typography variant="h5" sx={{ fontWeight: "bold", mb: 2, fontSize: { xs: "1.8rem", md: "2.5rem" } }}>
                 Hi, <span style={{ color: "lightblue" }}>{currentText}</span>
               </Typography>
-              <Typography variant="h3" sx={{ fontWeight: "bold", mb: 2, fontSize: { xs: "2rem", md: "3rem" } }}>
+              <Typography variant="h4" sx={{ fontWeight: "bold", mb: 2, fontSize: { xs: "2rem", md: "3rem" } }}>
                 Welcome to My Portfolio
               </Typography>
               <Typography variant="h6" sx={{ mb: 3, fontSize: { xs: "1rem", md: "1.5rem" } }}>
@@ -103,8 +103,8 @@ const Banner = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             style={{
-              width: isMobile ? "250px" : "500px",
-              height: isMobile ? "250px" : "500px",
+              width: isMobile ? "250px" : "600px",
+              height: isMobile ? "250px" : "600px",
               borderRadius: "50%",
               objectFit: "cover",
               marginTop: "10%",

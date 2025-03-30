@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Grid, Typography } from "@mui/material";
 import { motion } from "framer-motion";
-import aboutImg from "../../assets/P2.jpg"; // Replace with your actual image
+import aboutImg from "../../assets/KA.jpg"; // Replace with your actual image
 
 const About = () => {
   return (
@@ -63,6 +63,7 @@ const About = () => {
               maxWidth: "400px",
               borderRadius: "20px",
               cursor: "pointer",
+              marginTop: "10%",
               boxShadow: "0px 4px 15px rgba(0,0,0,0.6)",
               border: "5px solid rgba(255, 255, 255, 0.3)",
               transition: "transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out",
