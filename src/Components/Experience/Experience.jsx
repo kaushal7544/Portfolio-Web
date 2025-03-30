@@ -15,14 +15,14 @@ const experiences = [
     role: "Web Development",
     duration: "2023",
     description:
-      "This is 45day intarnship in Collage 5 sem basic in Html, Css ,React js and Node js to basic Projects.",
+      "This is 45day intarnship in Collage 5 sem basic in Html, Css and React js to basic Projects.",
   },
   {
     company: "N R Crew",
     role: "MERN Stack-Present",
     duration: "2025",
     description:
-      "This is 6 Month intarnship in Html, Css, Javascript, React JS, Node JS, Express JS and Mongo DB in this MERN Stack and this to Basic and Advans full Covers.",
+      "This is 6 Month intarnship in MERN Stack Devlopment to Basic and Advans full Covers.",
   },
 ];
 
@@ -78,7 +78,7 @@ const Experience = () => {
               >
                 <CardContent>
                   <Typography variant="h5" sx={{ fontWeight: "bold", mb: 1,
-                  // marginTop: "1%",
+                  // marginTop: "-1%",
                     }}>
                     {exp.company}
                   </Typography>
