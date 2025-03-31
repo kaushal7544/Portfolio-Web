@@ -9,6 +9,7 @@ html, body {
     overflow-x: hidden;
     background: linear-gradient(to right, #000, #1E3A8A);
     scroll-behavior: smooth;
+
 }
 
 @media (max-width: 768px) { 
@@ -20,6 +21,7 @@ html, body {
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
     width: 10px;
+    display: none;
 }
 
 ::-webkit-scrollbar-track {

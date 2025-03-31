@@ -83,14 +83,20 @@ const Banner = () => {
                   sx={{
                     fontSize: { xs: "0.8rem", md: "1rem" },
                     padding: { xs: "0.5rem 1rem", md: "0.8rem 1.5rem" },
-                    background: "rgb(19, 38, 90)",
-                    color: "#fff",
-                    "&:hover": { background: "rgb(7, 42, 141)", transform: "scale(1.02)" },
+                    background: "linear-gradient(to right, #00ffff, #1E3A8A)",
+                    borderRadius: { xs: "30px", md: "5px" },
+                    "&:hover": {
+                      background: "linear-gradient(to right, #00ffff, #1E3A8A)",
+                      transform: "scale(1.02)",
+                      borderRadius: "30px",
+                    },
                     transition: "transform 0.2s ease-in-out",
+                    color: "black",
                   }}
                 >
                   Download CV
                 </Button>
+
               </motion.div>
             </Box>
           </motion.div>
